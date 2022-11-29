@@ -23,4 +23,7 @@ export class ApiService {
   getProducts(): Observable<any>{
     return this.http.get("https://localhost:44308/api/CustomerApi/GetProducts", {responseType: 'json'});
   }
+  getCustomer():Observable<any>{
+    return this.http.get("https://localhost:44308/api/CustomerApi",{responseType:'json'});
+  }
 }

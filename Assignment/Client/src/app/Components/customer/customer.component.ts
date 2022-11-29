@@ -21,6 +21,7 @@ export class CustomerComponent implements OnInit {
   {
     name: "India"
   }];
+  customerList: any;
 
   constructor(private service:ApiService) { }
 
@@ -28,6 +29,7 @@ export class CustomerComponent implements OnInit {
     this.products = this.service.products;
     console.log(this.service.employees);
     console.log(this.service.products);
+    this.listCustomer();
   }
   
   addCustomer(){
@@ -86,4 +88,17 @@ export class CustomerComponent implements OnInit {
     }
   }
 
+  listCustomer(){
+    this.service.getCustomer().subscribe(
+      res=>{
+        this.customerList=res
+        console.log(this.customerList);
+      },
+      err=>{
+        console.log (err);
+      }
+      
+    );
+
+  }
 }

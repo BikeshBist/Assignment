@@ -5428,11 +5428,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\ImarkProjectDemo\\ImarkProjectDemo\\ImarkProjectDemo.csproj",
+      "projectUniqueName": "D:\\AssignmentNMA\\Assignment\\C#\\ImarkProjectDemo\\ImarkProjectDemo\\ImarkProjectDemo.csproj",
       "projectName": "ImarkProjectDemo",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\ImarkProjectDemo\\ImarkProjectDemo\\ImarkProjectDemo.csproj",
+      "projectPath": "D:\\AssignmentNMA\\Assignment\\C#\\ImarkProjectDemo\\ImarkProjectDemo\\ImarkProjectDemo.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\ImarkProjectDemo\\ImarkProjectDemo\\obj\\",
+      "outputPath": "D:\\AssignmentNMA\\Assignment\\C#\\ImarkProjectDemo\\ImarkProjectDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

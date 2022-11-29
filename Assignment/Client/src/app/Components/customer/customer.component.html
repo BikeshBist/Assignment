@@ -136,16 +136,16 @@
                 <div class="col-lg-9 ms-0 ps-0"> <input type="button"  class="btn btn-primary" value="Submit" (click)="addCustomer()">
                 </div>
             </div>
-             <div class="col-lg-6">
-                <!-- <div>
+             <!-- <div class="col-lg-6">
+                <div>
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-info" 
-                        *ngFor="let item of patient.PatientProblem">
-                            {{item.problemType}}
+                        *ngFor="let item of customer.Orders">
+                            {{item.productName}}
                         </li>
                     </ul>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
         </div>
     </form>
 </div>
@@ -266,3 +266,51 @@
       </div>
     </div>
   </div>
+<br>
+  <table class="table">
+    <thead>
+        <th>S.N</th>
+        <th>Customer Name</th>
+        <th>Company Name</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Phone Number</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of customerList">
+            <td>
+                {{data.customerId}}
+            </td>
+            <td>
+                {{data.contactName}}
+            </td>
+            <td>
+                {{data.companyName}}
+            </td>
+            <td>
+                {{data.country}}
+            </td>
+            <td>
+                {{data.city}}
+            </td>
+            <td>
+                {{data.phone}}
+            </td>
+            
+        </tr>
+    </tbody>
+  </table>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid rgba(10, 6, 6, 0.925);
+      border-collapse: collapse;
+    }
+  
+    th,
+    td {
+      background-color: #d0f5f5;
+    }
+  </style>
