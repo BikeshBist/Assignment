@@ -1,0 +1,268 @@
+<div class="container mt-5" >
+    <form [formGroup]="customer.customerFormGroup">
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="CompanyName">CompanyName<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" 
+                         id="CompanyName" autofocus
+                            name="CompanyName" formControlName="CompanyName">
+                    </div>
+                </div> 
+            </div>
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ContactName">ContactName<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" 
+                        class="form-control" id="ContactName"
+                            name="ContactName" formControlName="ContactName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ContactTitle">ContactTitle<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" 
+                        class="form-control" id="ContactTitle"
+                            name="ContactTitle" formControlName="ContactTitle">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="Address">Address<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="Address" 
+                        class="form-control" id="Address"
+                            name="Address"formControlName="Address">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="City">City<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="City"
+                            name="City"formControlName="City">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col me-0 pe-0 text-center"> <label for="Region">Country<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <select class="form-select" 
+                        name="Region" id="Region" formControlName="Country" (change)="onCountryChange($event)">
+                    <option value="">Choose Country</option>
+                    <option  value="{{data.name}}" *ngFor="let data of countries"> {{ data.name }}</option>
+                    </select> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="Region">Region<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="Region"
+                            name="Region"formControlName="Region">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="Phone">Phone<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="Phone"
+                            name="Phone"formControlName="Phone">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="PostalCode">PostalCode<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col ms-0 ps-0"> <input type="text" 
+                        class="form-control" id="PostalCode"
+                            name="PostalCode"formControlName="PostalCode">
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-6">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="Fax">Fax<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="Fax"
+                                name="Fax"formControlName="Fax">
+                        </div>
+                    </div> 
+                </div>
+        <div class="row mt-2"></div>
+            <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 me-0 pe-0 text-center"> <label for="PatientProblem">Orders<sup
+                                class="text-danger">*</sup></label>
+                    </div>
+                    <div class="col ms-0 ps-0"> <input type="text" style="width: 280px;"
+                        class="form-control" id="CustomersOrder"
+                            name="Ordertype">
+                    </div>
+                    <button class="btn btn-primary"  style="width: 120px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Orders</button>
+                </div>
+            </div>
+         </div>
+         <div class="row mt-2">
+            <div class="col-lg-6">
+                <div class="col-lg-9 ms-0 ps-0"> <input type="button"  class="btn btn-primary" value="Submit" (click)="addCustomer()">
+                </div>
+            </div>
+             <div class="col-lg-6">
+                <!-- <div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info" 
+                        *ngFor="let item of patient.PatientProblem">
+                            {{item.problemType}}
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </form>
+</div>
+
+
+  
+  <!-- Modal -->
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- Your content goes here -->
+            <div class="row mt-2" [formGroup]="order.orderFormGroup">
+                <div class="col-md-12">
+                    <!-- <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="RequiredDate">RequiredDate<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="OrderId" autofocus
+                                name="RequiredDate" formControlName="RequiredDate">
+                        </div>
+                    </div> -->
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="product">Product<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> 
+                            <select name="" id="" (change) ="onProductChange($event)" class="form-control">
+                                <option value="" selected>---select product-</option>
+                                <option value="{{data.productId}}" *ngFor="let data of products">{{data.productName}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="rate">Rate<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> 
+                           <input type="number" name="" id="" class="form-control" formControlName="UnitPrice" [attr.disabled]="true" (ngModelChange)="calculate()">
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="quantity">Quantity<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> 
+                            <input type="number" name="" id="" class="form-control" formControlName="Quantity" (ngModelChange)="calculate()">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="total">Total<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> 
+                            <input type="number" name="" id="" class="form-control" formControlName="Total" [attr.disabled]="true">
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ShipAddress">ShipAddress<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="ShipAddress"
+                                name="ShipAddress" formControlName="ShipAddress">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ShipCity">ShipCity<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="ShipAddress"
+                                name="ShipCity" formControlName="ShipCity">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ShipRegion">ShipRegion<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0"> <input type="text" class="form-control" id="ShipAddress"
+                                name="ShipRegion" formControlName="ShipRegion">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ShipPostalCode">ShipPostalCode<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0">
+                            <input type="text" name="ShipPostalCode" class="form-control" formControlName="ShipPostalCode">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 me-0 pe-0 text-center"> <label for="ShipCountry">ShipCountry<sup
+                                    class="text-danger">*</sup></label>
+                        </div>
+                        <div class="col-lg-9 ms-0 ps-0" >
+                            <input type="text" name="ShipCountry" class="form-control" formControlName="ShipCountry">
+
+                        </div>
+                    </div>
+                </div>
+            
+                
+            </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="AddOrders()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

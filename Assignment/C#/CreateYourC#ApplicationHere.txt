@@ -1,0 +1,49 @@
+1. Firstly connect the the database with your c# application using command
+   as folowing or you will also go through manual process because our database 
+   has made by database first method so.We put this command in package manager console:
+
+	Scaffold-DbContext "Server=BIKESH;Database=Northwind;Trusted_Connection=true;
+	MultipleActiveResultSets=true;Integrated Security=true;TrustServerCertificate=true" 
+	Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -DataAnnotations
+		
+		//reference taken from Reverse Engineering//
+
+2. If we go through this connctionstring should implemented directly on NorthwindContext
+   so we cut that from there and put it on appsettings because it's difficult to get data
+   from Context directly by this way:
+
+	"ConnectionStrings": {
+    	"DbString": "Data Source=BIKESH;Initial Catalog=Northwind;Integrated Security=True"
+ 	 }
+
+  Also in startup.cs inside ConfigureServices:
+	 
+		 services.AddDbContext<NorthwindContext>(Options =>{
+               	 Options.UseSqlServer(Configuration.GetConnectionString("DbString"));
+           	 });
+
+
+3. Our task is to show customer by their id along with orders so we create new APIController 
+   named as CostumerApiController and write the folowing code:
+	
+	 // GET api/<CustomerApiController>/5
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
+        {
+            var selectedCustomer = _Db.Customers.Where(x => x.CustomerId == id).Include(x => x.Orders).FirstOrDefault();
+            return Ok(selectedCustomer);
+        }
+
+4. Then we open postman and run the project there may be chance of getting error of circular dependencies if you use 
+   lower versions of visual studio so write given code inside ConfigureServices:
+
+            	services.AddControllersWithViews()
+    		.AddNewtonsoftJson(options =>
+   		 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+		);
+
+6. Now check it in postman: 
+
+ 	https://localhost:44308/api/CustomerApi/ALFKI
+
+	it's working fine
